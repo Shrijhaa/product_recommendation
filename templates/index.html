@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+        <title>PRODUCTS</title>
+
+    </head>
+    <body>
+        <!-- <h1>PRODUCTS</h1>
+
+        <form action='/data',method="POST">
+        <input type="number" id="userid" name="'userid">
+        <input type="submit" value="Submit">
+        </form> -->
+
+        
+    <form action="{{ url_for('printid')}}" method="post" id="userform">
+    <input type="number" id="userid" name="userid" placeholder="'enter user id......" >
+    
+    <button id="submit" type="submit">Submit</button>
+    </form>
+
+    <div class="row">
+        <ul class="ulist">
+            <!--LOOP THROUGH DICTIONARY-->
+        {% for key,val in result.items() %}
+        <li class="list">         
+                <div class="card">
+                    <div class="contentBox">
+                      <h3>{{val}}</h3>
+                      <p>{{key}}</p>
+                      <a href="#" class="buy">Buy Now</a>
+                    </div>
+                  
+                  </div>
+
+           
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+    </body>
+</html>
